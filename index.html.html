@@ -1,0 +1,405 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Lista de Presentes</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+            margin: 0;  
+            padding: 0;  
+        }  
+        .header {  
+            margin: 20px 0; 
+         
+        }  
+        .header img {  
+            width: 300px; /* Você pode ajustar este valor conforme necessário */  
+            height: auto; /* Mantém a proporção da imagem */  
+            display: block; /* Necessário para centralizar */  
+            margin-left: auto; /* Centraliza horizontalmente */  
+            margin-right: auto; 
+
+        }
+
+
+        .gift-list {  
+            display: grid;  
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  
+            gap: 15px;  
+            max-height: 500px;  
+            overflow-y: scroll;  
+            padding: 10px;  
+            border: 1px solid #ccc;  
+            border-radius: 10px;  
+            background-color: #f9f9f9;  
+        }  
+        .gift-item {  
+            border: 1px solid #ddd;  
+            border-radius: 10px;  
+            text-align: center;  
+            padding: 10px;  
+            background-color: white;  
+            transition: transform 0.2s;  
+            cursor: pointer; /* Adiciona um cursor de ponteiro */  
+        }  
+        .gift-item:hover {  
+            transform: scale(1.05);  
+        }  
+        .selected-gift {  
+            margin-top: 20px;  
+            padding: 10px;  
+            border: 1px solid #ccc;  
+            background-color: #e9ffe9;  
+            display: inline-block;  
+            max-width: 300px;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>
+        <img src="2.1.jpg.png" alt="Casamento" />
+      </header>
+      <footer>
+        <div class="pix-info">
+          <h3>Oiê, bem vindos a nossa lista de presentes.
+            <p>Nesta lista vocÊ encontra presentes para todos os gostos e bolsos, você pode comprar diretamente pelo link ou se preferir escolher da sua loja favorita.</p>
+            <p>Pedimos que apenas para evitarem itens que não estejam na lista, pois como sabem jé temos a casa parcialmente montada e queremos evitar itens repetidos.</p>
+            <p>Mesmo que vá comprar algum item de outra loja, pedimos que marque nesta lista sua escolha, assim também evitamos itens repetidos. Basta selecionar e escrever seu nome.</p>
+            <p>Se preferir pode mandar entregar diretamente no nosso endereço.</p>
+            <p>Rua Egon Irmfried Jung, número 381, bairro: São Rafael, Canela-RS. CEP:95688-252.</p>
+            <p>Ou ainda se preferir pode enviar o presente via PIX:</p>
+          </h3>
+          <h2><p>Email: casamentoluiz.mikaella@gmail.com</p></h2>
+          <h3>Qualquer dúvida ou dificuldade é só nos chamar no WhatsApp.</h3>
+          
+        </div>
+      </footer>
+
+    <div class="gift-list" id="gift-list">  
+        <div class="gift-item" data-nome="Kit Colcha Cobre Leito Dupla Face 3 Peças." data-preco="R$ 67,90">  
+            <a href="https://shopee.com.br/Kit-Colcha-Cobre-Leito-Casal-Dupla-Face-3-Pe%C3%A7as-i.305865563.9355255471?xptdk=fdcb1511-4981-40ee-970c-424820a4f0dd" target="_blank">
+                <img src="foto1.1.jpg" alt="Kit Colcha Cobre Leito Dupla Face 3 Peças." style="width: 100%; height: auto;">  
+                <p>Kit Colcha Cobre Leito Dupla Face 3 Peças.</p>  
+                <p>Preço: R$ 67,90</p>  
+                <button class="selecionar">Selecionar</button>
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Escova de Limpeza Ajustável Janela, Banheiro e Cozinha." data-preco="R$ 69,90">  
+            <a href="lhttps://shopee.com.br/Escova-De-Limpeza-Ajust%C3%A1vel-Janela-Banheiro-e-Cozinha-Ferramenta-3-em-1-Recarreg%C3%A1vel-i.328666563.20797473907?xptdk=09a2e15c-28d5-47c7-9b0c-30c87e940d33" target="_blank">  
+                <img src="foto2.jpg" alt="Escova de Limpeza Ajustável Janela, Banheiro e Cozinha." style="width: 100%; height: auto;">  
+                <p>Escova de Limpeza Ajustável Janela, Banheiro e Cozinha.</p>  
+                <p>Preço: R$ 69,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Seladora Veda Embalagem." data-preco="R$ 15,33">  
+            <a href="https://shopee.com.br/Seladora-Veda-embalagem-com-4-pe%C3%A7as-na-cor-Rosa-i.319978539.22396997895?xptdk=4d755f95-f9e2-4b05-8cb3-0b183fbb5158" target="_blank">  
+                <img src="foto3.jpg" alt="Seladora Veda Embalagem." style="width: 100%; height: auto;">  
+                <p>Seladora Veda Embalagem.</p>  
+                <p>Preço: R$ 15,33</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit 8 Peças Rosa Xícaras e Colheres Medidores Média." data-preco="R$ 24,35">  
+            <a href="https://shopee.com.br/Kit-8-Pe%C3%A7as-Rosa-Xicaras-e-Colheres-Medidores-Medida-com-Cortador-em-4-formatos-i.319978539.22392903875?xptdk=4b5005e4-dd7f-47b2-bc50-2505463f59ff" target="_blank">  
+                <img src="foto4.jpg" alt="Kit 8 Peças Rosa Xícaras e Colheres Medidores Média." style="width: 100%; height: auto;">  
+                <p>Kit 8 Peças Rosa Xícaras e Colheres Medidores Média.</p>  
+                <p>Preço: R$ 24,35</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Forma de Pudim, Gelatina, Bolo de microondas na cor Rosa." data-preco="R$ 22,84">  
+            <a href="https://shopee.com.br/Forma-de-Pudim-Gelatina-bolo-de-microondas-na-cor-rosa-com-formato-lindo-i.319978539.12180342813?xptdk=c7a42a85-5818-41a0-902a-bf05bf1a9992" target="_blank">  
+                <img src="foto3.3.jpg" alt="Forma de Pudim, Gelatina, Bolo de microondas na cor Rosa" style="width: 100%; height: auto;">  
+                <p>Forma de Pudim, Gelatina, Bolo de microondas na cor Rosa.</p>  
+                <p>Preço: R$ 22,84</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Forro para Air Fryer de Silicone Reutilizável Antiaderente." data-preco="R$ 10,60">  
+            <a href="https://shopee.com.br/Forro-Para-Air-Fryer-De-Silicone-Reutiliz%C3%A1vel-Antiaderente-i.277539644.20972061371?xptdk=b5a40a65-d011-415f-8676-304a74bc95d22" target="_blank">  
+                <img src="4.4.jpg" alt="Forro para Air Fryer de Silicone Reutilizável Antiaderente." style="width: 100%; height: auto;">  
+                <p>Forro para Air Fryer de Silicone Reutilizável Antiaderente.</p>  
+                <p>Preço: R$ 10,60</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Escorredor Suporte Talher Organizador Redondo Aço." data-preco="R$ 34,90">  
+            <a href="https://shopee.com.br/Escorredor-Suporte-Talher-Porta-Colher-Organizador-Redondo-A%C3%A7o-Pia-Bancada-Resistente-ros%C3%A9-tok-d-casa-i.407980879.23993806767?xptdk=406a55d9-c8e0-4d5d-bdb7-0036868b452c" target="_blank">  
+                <img src="foto5.5.jpg" alt="Escorredor Suporte Talher Organizador Redondo Aço." style="width: 100%; height: auto;">  
+                <p>Escorredor Suporte Talher Organizador Redondo Aço.</p>  
+                <p>Preço: R$ 34,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>   
+        <div class="gift-item" data-nome="Escorredor de Louça Max Duplo 14 Pratos, Cobre Rose." data-preco="R$ 64,99">  
+            <a href="https://shopee.com.br/Escorredor-de-Lou%C3%A7as-Max-Duplo-14-Pratos-Cobre-Rose-Gold-para-Sua-Cozinha-i.739932717.22193681722?xptdk=281ebe3a-967b-410e-8cf8-38bdab5f4174" target="_blank">  
+                <img src="6.6.jpg" alt="Escorredor de Louça Max Duplo 14 Pratos, Cobre Rose." style="width: 100%; height: auto;">  
+                <p>Escorredor de Louça Max Duplo 14 Pratos, Cobre Rose.</p> 
+                <p>Preço: R$ 64,99</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Cobredom Alaska Casal Queen Colorido Grande." data-preco="R$ 103,43">  
+            <a href="https://shopee.com.br/Coberdrom-Alaska-Casal-Queen-Colorido-Grande-Sherpa-Manta-150-Pele-de-Carneiro-Fofo-Quente-Pro-Frio-i.470040601.23328305944?xptdk=9d29ee68-3d8d-4907-ace6-33cc23b68ed1" target="_blank">  
+                <img src="7.7.jpg" alt="Cobredom Alaska Casal Queen Colorido Grande." style="width: 100%; height: auto;">  
+                <p>Cobredom Alaska Casal Queen Colorido Grande.</p>  
+                <p>Preço: R$ 103,43</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="it 3 Veda Porta Ajustável Protetor Porta Rolinho Duplo 80cm." data-preco="R$ 59,80">  
+            <a href="https://shopee.com.br/Kit-3-Veda-Porta-Ajust%C3%A1vel-Protetor-de-Porta-Rolinho-Duplo-80cm-i.1421120799.19398031220?xptdk=40df0ec7-8c2c-4b82-9a07-8a0c5eee1006" target="_blank">  
+                <img src="8.8.jpg" alt="Kit 3 Veda Porta Ajustável Protetor Porta Rolinho Duplo 80cm." style="width: 100%; height: auto;">  
+                <p>Kit 3 Veda Porta Ajustável Protetor Porta Rolinho Duplo 80cm.</p>  
+                <p>Preço: R$ 59,80</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Azul Nublado)." data-preco="R$ 144,90">  
+            <a href="https://shopee.com.br/Jogo-Kit-3-Toalhas-(2-Banho-1-Rosto)-Super-Luxo-Macia-Felpuda-Premium-Alta-Absor%C3%A7%C3%A3o-100-Algod%C3%A3o-i.1284771716.22093157338?xptdk=d464a072-248a-47d1-8175-ae81d8d62884" target="_blank">  
+                <img src="9.9.jpg" alt="Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Azul Nublado)." style="width: 100%; height: auto;">  
+                <p>Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Azul Nublado).</p>  
+                <p>Preço: R$ 144,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>
+        </div>  
+        <div class="gift-item" data-nome="Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Rosê)." data-preco="R$ 144,90">  
+            <a href="https://shopee.com.br/Jogo-Kit-3-Toalhas-(2-Banho-1-Rosto)-Super-Luxo-Macia-Felpuda-Premium-Alta-Absor%C3%A7%C3%A3o-100-Algod%C3%A3o-i.1284771716.22093157338?xptdk=f16351b1-74f4-43f2-afa7-3f5c95a644f1" target="_blank">  
+                <img src="10.10.jpg" alt="Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Rosê)." style="width: 100%; height: auto;">  
+                <p>Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Rosê).</p>  
+                <p>Preço: R$ 144,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Lago Congelado)." data-preco="R$ 144,90">  
+            <a href="https://shopee.com.br/Jogo-Kit-3-Toalhas-(2-Banho-1-Rosto)-Super-Luxo-Macia-Felpuda-Premium-Alta-Absor%C3%A7%C3%A3o-100-Algod%C3%A3o-i.1284771716.22093157338?xptdk=5e971ed4-1b23-43b3-825f-5f7502409ca4" target="_blank">  
+                <img src="11.11.jpg" alt="Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Lago Congelado)." style="width: 100%; height: auto;">  
+                <p>Kit 3 Toalhas 2-Banho e 1-Rosto, Super Luxo (Lago Congelado).</p>  
+                <p>Preço: R$ 144,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit Completo Saia para Cama Box Protetor." data-preco="R$ 114,90">  
+            <a href="https://shopee.com.br/Kit-Completo-Saia-Para-Cama-Box-Protetor-Imperme%C3%A1vel-SOLTEIRO-CASAL-PADR%C3%83O-QUEEN-E-KING-i.318910358.20298844681?xptdk=0276b440-dc95-4e5d-baa9-35b3e2d60e8a" target="_blank">  
+                <img src="foto12.jpg" alt="Kit Completo Saia para Cama Box Protetor." style="width: 100%; height: auto;">  
+                <p>Kit Completo Saia para Cama Box Protetor.</p>  
+                <p>Preço: R$ 114,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>    
+        <div class="gift-item" data-nome="Kit Cobre Leito 3 Peças Toque Macio Dupla Face Casal Queen (Cinza)." data-preco="R$ 74,90">  
+            <a href="https://shopee.com.br/Kit-Cobre-Leito-03-Pe%C3%A7as-Toque-Macio-Dupla-Face-Casal-Queen-King-Dupla-Face-i.552896405.22593254651?xptdk=4b145104-b7a6-40f4-b445-ce5ee4ebbaa3" target="_blank">  
+                <img src="foto13.jpg" alt="Kit Cobre Leito 3 Peças Toque Macio Dupla Face Casal Queen (Cinza)." style="width: 100%; height: auto;">  
+                <p>Kit Cobre Leito 3 Peças Toque Macio Dupla Face Casal Queen (Cinza).</p>  
+                <p>Preço: R$ 74,90</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit Cobre Leito 3 Peças Toque Macio Dupla Face Casal Queen (Rose Claro)." data-preco="R$ 74,90">  
+            <a href="https://shopee.com.br/Kit-Cobre-Leito-03-Pe%C3%A7as-Toque-Macio-Dupla-Face-Casal-Queen-King-Dupla-Face-i.552896405.22593254651?xptdk=ed6b7a2e-6d82-4580-9230-2f14a1099dda" target="_blank">  
+                <img src="foto15.jpg" alt="Kit Cobre Leito 3 Peças Toque Macio Dupla Face Casal Queen (Rose Claro)." style="width: 100%; height: auto;">  
+                <p>Kit Cobre Leito 3 Peças Toque Macio Dupla Face Casal Queen (Rose Claro).</p>  
+                <p>Preço: R$ 150,00</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Porta Temperos Giratório (Preto 16 Potes)." data-preco="R$ 84,99">  
+            <a href="https://shopee.com.br/Porta-Temperos-Girat%C3%B3rio-12-16-20-Potes-Porta-Temperos-Caneta-Marcadora-Etiquetas-Design-360%C2%B0-Rotativo-i.1430676030.23093804288?xptdk=8162efdc-2dc8-483f-9d8e-2c016eb37f44" target="_blank">  
+                <img src="foto16.jpg" alt="Porta Temperos Giratório (Preto 16 Potes)." style="width: 100%; height: auto;">  
+                <p>Porta Temperos Giratório (Preto 16 Potes).</p>  
+                <p>Preço: R$ 84,99</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit Colcha Cobre Leito Queen 2,40x2,60 Dupla Face (Verde)." data-preco="R$ 89,90">  
+            <a href="https://shopee.com.br/kit-Colcha-Cobre-Leito-Casal-Queen-2-40x2-60-Dupla-Face-i.443253356.8789217426?xptdk=b42cc64e-01e9-4598-af32-533daa4a9f4f" target="_blank">  
+                <img src="foto17.jpg" alt="Kit Colcha Cobre Leito Queen 2,40x2,60 Dupla Face (Verde)." style="width: 100%; height: auto;">  
+                <p>Kit Colcha Cobre Leito Queen 2,40x2,60 Dupla Face (Verde).</p>  
+                <p>Preço: R$ 89,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Kit Colcha Cobre Leito Queen 2,40x2,60 Dupla Face (Rosa)." data-preco="R$ 89,90">  
+            <a href="https://shopee.com.br/kit-Colcha-Cobre-Leito-Casal-Queen-2-40x2-60-Dupla-Face-i.443253356.8789217426?xptdk=0fdd23f2-9307-4110-a4ff-a9d823189c4f" target="_blank">  
+                <img src="foto18.jpg" alt="Kit Colcha Cobre Leito Queen 2,40x2,60 Dupla Face (Rosa)." style="width: 100%; height: auto;">  
+                <p>Kit Colcha Cobre Leito Queen 2,40x2,60 Dupla Face (Rosa).</p>  
+                <p>Preço: R$ 89,90</p>
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Peseira Drapeada Suede Cama King 2,60x0,60 cm (Terra Cota)." data-preco="R$ 64,99">  
+            <a href="https://shopee.com.br/Peseira-drapeada-suede-cama-King-2-60-cm-x-0-60-cm-(ENVIO-IMEDIATO)-i.609740902.19697684737?xptdk=205a16e0-8085-47e4-a21e-81dac1c5e519" target="_blank">  
+                <img src="foto19.jpg" alt="Peseira Drapeada Suede Cama King 2,60x0,60 cm (Terra Cota)." style="width: 100%; height: auto;">  
+                <p>Peseira Drapeada Suede Cama King 2,60x0,60 cm (Terra Cota).</p>  
+                <p>Preço: R$ 64,99</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Cobre Leito Queen Lençol Queen 4 Peças (Rose)." data-preco="R$ 74,90">  
+            <a href="https://shopee.com.br/Cobre-Leito-Queen-Len%C3%A7ol-Queen-4-Pe%C3%A7as-Slim-i.418872496.23193167158?xptdk=4a7a62b1-6425-4c72-9f99-91e02df80486" target="_blank">  
+                <img src="foto20.jpg" alt="Cobre Leito Queen Lençol Queen 4 Peças (Rose)." style="width: 100%; height: auto;">  
+                <p>Cobre Leito Queen Lençol Queen 4 Peças (Rose).</p>  
+                <p>Preço: R$ 74,90</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Almofada Nozinho Decorativa Escandinava (Verde Escuro)." data-preco="R$ 19,11">  
+            <a href="https://shopee.com.br/Almofada-Nozinho-Decorativa-N%C3%B3-Escandinava-fofa-Moderna-Linda-Casa-i.351529951.3004171060?xptdk=4a20f8be-1e30-4457-aed2-b0525805b641" target="_blank">  
+                <img src="foto21.jpg" alt="Almofada Nozinho Decorativa Escandinava (Verde Escuro)." style="width: 100%; height: auto;">  
+                <p>Almofada Nozinho Decorativa Escandinava (Verde Escuro).</p>  
+                <p>Preço: R$ 19,11</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Almofada Nozinho Decorativa Escandinava (Verde Tifanny)." data-preco="R$ 19,11">  
+            <a href="https://shopee.com.br/Almofada-Nozinho-Decorativa-N%C3%B3-Escandinava-fofa-Moderna-Linda-Casa-i.351529951.3004171060?xptdk=8de65cc1-2518-4b45-99d9-2365f037cd68" target="_blank">  
+                <img src="foto22.jpg" alt="Almofada Nozinho Decorativa Escandinava (Verde Tifanny)." style="width: 100%; height: auto;">  
+                <p>Almofada Nozinho Decorativa Escandinava (Verde Tifanny).</p>  
+                <p>Preço: R$ 19,11</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Almofada Nozinho Decorativa Escandinava (Azul Claro Céu)." data-preco="R$ 19,11">  
+            <a href="https://shopee.com.br/Almofada-Nozinho-Decorativa-N%C3%B3-Escandinava-fofa-Moderna-Linda-Casa-i.351529951.3004171060?xptdk=05b75829-475a-4db0-875f-583012ba4247" target="_blank">  
+                <img src="foto23.jpg" alt="Almofada Nozinho Decorativa Escandinava (Azul Claro Céu)" style="width: 100%; height: auto;">  
+                <p>Almofada Nozinho Decorativa Escandinava (Azul Claro Céu).</p>  
+                <p>Preço: R$ 19,11</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Almofada Nozinho Decorativa Escandinava (Cinza Claro)." data-preco="R$ 19,11">  
+            <a href="https://shopee.com.br/Almofada-Nozinho-Decorativa-N%C3%B3-Escandinava-fofa-Moderna-Linda-Casa-i.351529951.3004171060?xptdk=9aa1e731-ef98-43ed-81dd-03f66689f544" target="_blank">  
+                <img src="foto24.jpg" alt="Almofada Nozinho Decorativa Escandinava (Cinza Claro)." style="width: 100%; height: auto;">  
+                <p>Almofada Nozinho Decorativa Escandinava (Cinza Claro).</p>  
+                <p>Preço: R$ 19,11</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Saia para Cama Box Matelada Ultra 200 Fios." data-preco="R$ 37,99">  
+            <a href="https://shopee.com.br/Saia-para-cama-Box-Matelada-Ultra-SONIC-Todos-Tamanhos-200-Fios-Solteiro-Casal-Padr%C3%A3o-Queen-e-King-i.564049415.23892566549?xptdk=28701489-d94c-46e1-9b54-8c6eecf82b8e" target="_blank">  
+                <img src="foto25.jpg" alt="Saia para Cama Box Matelada Ultra 200 Fios." style="width: 100%; height: auto;">  
+                <p>Saia para Cama Box Matelada Ultra 200 Fios.</p>  
+                <p>Preço: R$ 37,99</p>  
+                <button class="selecionar">Selecionar</button>
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Sapateira 4/5 Andares Organizador de Sapatos Desmontável." data-preco="R$ 19,00">  
+            <a href="https://shopee.com.br/Sapateira-4-5-andares-Organizador-de-Sapatos-Tenis-8-Pare-Desmontavel-Movel-sapateira-de-entrada-estante-organizadora-i.390307022.23193003159?xptdk=5c962b67-a3f1-44f4-9770-397db152a089" target="_blank">  
+                <img src="foto26.jpg" alt="Sapateira 4/5 Andares Organizador de Sapatos Desmontável" style="width: 100%; height: auto;">  
+                <p>Sapateira 4/5 Andares Organizador de Sapatos Desmontável.</p>  
+                <p>Preço: R$ 19,00</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Capa para Sofá 3 e 2 Lugares Lisa Malha (Chumbo)." data-preco="R$ 77,90">  
+            <a href="https://shopee.com.br/Capa-De-Sof%C3%A1-3-E-2-Lugares-Lisa-Malha-Gel-i.546270549.11252268726?xptdk=773a5736-7e5a-49f8-8348-5d54f5594c7c" target="_blank">  
+                <img src="foto27.jpg" alt="Capa para Sofá 3 e 2 Lugares Lisa Malha (Chumbo)." style="width: 100%; height: auto;">  
+                <p>Capa para Sofá 3 e 2 Lugares Lisa Malha (Chumbo).</p>  
+                <p>Preço: R$ 77,90</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>  
+        <div class="gift-item" data-nome="Cabide para Calças Organizador, Aço Inox MUltifuncional Retrátil." data-preco="R$ 19,00">  
+            <a href="https://shopee.com.br/Cabide-Para-Cal%C3%A7as-Organizador-A%C3%A7o-Inox-Multifuncional-Retr%C3%A1til-5-em-1-i.1182328760.19099544205?xptdk=a0fe73ac-1bd5-4dea-a41f-05ba3ef72af0" target="_blank">  
+                <img src="foto28.jpg" alt="Cabide para Calças Organizador, Aço Inox MUltifuncional Retrátil." style="width: 100%; height: auto;">  
+                <p>Cabide para Calças Organizador, Aço Inox MUltifuncional Retrátil.</p>  
+                <p>Preço: R$ 19,00</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>
+        <div class="gift-item" data-nome="Fruteira 3 Cestos Cozinha." data-preco="R$ 120,00">  
+            <a href="https://shopee.com.br/Fruteira-3-Cestos-Cozinha-Preta-Em-A%C3%A7o-Base-Mdf-Amadeirado-i.827252045.22193000260?xptdk=016bf4a4-d6b3-4a25-a1a3-8508f1e39243" target="_blank">  
+                <img src="foto29.jpg" alt="Fruteira 3 Cestos Cozinha." style="width: 100%; height: auto;">  
+                <p>Fruteira 3 Cestos Cozinha.</p>  
+                <p>Preço: R$ 120,00</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>
+        <div class="gift-item" data-nome="Organizador Gaveteiro com 6 Divisórias." data-preco="R$ 66,50">  
+            <a href="https://shopee.com.br/Organizador-Gaveteiro-Com-6-Divis%C3%B3rias-Mdf-Cru-i.521356345.14161972451?xptdk=ad986b9d-377c-4fa8-a82e-404dd370f3a0" target="_blank">  
+                <img src="foto30.jpg" alt="Organizador Gaveteiro com 6 Divisórias." style="width: 100%; height: auto;">  
+                <p>Organizador Gaveteiro com 6 Divisórias.</p>  
+                <p>Preço: R$ 66,50</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>
+        <div class="gift-item" data-nome="Guarda Roupa Dobrável Organizador de Roupas (Rosa)." data-preco="R$ 129,99">  
+            <a href="https://shopee.com.br/Guarda-Roupa-Dobr%C3%A1vel-Organizador-De-Roupas-Port%C3%A1til-com-Ziper-Arm%C3%A1rio-de-Roupa-Multifuncional-i.932584529.22392621968?xptdk=2af1fc1d-d733-4c51-b43a-e809855b52e5" target="_blank">  
+                <img src="foto31.jpg" alt="Guarda Roupa Dobrável Organizador de Roupas (Rosa)." style="width: 100%; height: auto;">  
+                <p>Guarda Roupa Dobrável Organizador de Roupas (Rosa).</p>  
+                <p>Preço: R$ 129,99</p>
+                <button class="selecionar">Selecionar</button>  
+            </a>  
+        </div>
+        <div class="gift-item" data-nome="Guarda Roupa Dobrável Organizador de Roupas (Cinza)." data-preco="R$ 113,00">  
+            <a href="https://shopee.com.br/Guarda-Roupa-Dobr%C3%A1vel-Organizador-De-Roupas-Arm%C3%A1rio-Grande-Quatro-Cores-i.1151712563.23392917628?xptdk=ff2e38ce-a078-48ab-8b2b-36a358056888" target="_blank">  
+                <img src="foto32.jpg" alt="Guarda Roupa Dobrável Organizador de Roupas (Cinza)." style="width: 100%; height: auto;">  
+                <p>Guarda Roupa Dobrável Organizador de Roupas (Cinza).</p>  
+                <p>Preço: R$ 113,00</p> 
+                <button class="selecionar">Selecionar</button> 
+            </a>  
+        </div>
+
+
+        <!-- Adicione mais itens aqui -->  
+    </div>  
+
+    <div>  
+        <input type="text" id="nome" placeholder="Digite seu nome">  
+        <button id="selecionar">Selecionar Presente</button>  
+    </div>  
+
+    <div class="selected-gift" id="presentes-selecionados">  
+        <p>Nenhum presente selecionado.</p>  
+    </div>  
+
+    <script>  
+const selecionarBtn = document.getElementById('selecionar');  
+const presentesSelecionadosDiv = document.getElementById('presentes-selecionados');  
+const nomeInput = document.getElementById('nome');  
+const giftList = document.getElementById('gift-list');  
+
+let presenteSelecionado = '';  
+let precoSelecionado = '';  
+
+giftList.addEventListener('click', function(event) {  
+    const item = event.target.closest('.gift-item');  
+    if (item && !item.classList.contains('selected')) {  
+        presenteSelecionado = item.dataset.nome;  
+        precoSelecionado = item.dataset.preco;  
+        
+        // Destaque o presente selecionado  
+        item.classList.add('selected');   
+
+        // Remove o item da lista  
+        item.parentNode.removeChild(item);  
+    }  
+});  
+
+selecionarBtn.addEventListener('click', function() {  
+    const nome = nomeInput.value.trim();  
+    if (!presenteSelecionado || !nome) {  
+        alert('Selecione um presente e digite seu nome.');  
+    } else {  
+        // Exibir o presente selecionado sem o nome do usuário  
+        presentesSelecionadosDiv.innerHTML += `<p>Um presente selecionado: ${presenteSelecionado} - ${precoSelecionado}</p>`;  
+        
+        // Esconde o campo de nome e o botão  
+        nomeInput.style.display = 'none';  
+        selecionarBtn.style.display = 'none';  
+        
+        // Resetar os dados de seleção para a próxima vez (opcional)  
+        presenteSelecionado = '';  
+        precoSelecionado = '';  
+    }  
+});
+
+
+    </script>  
+
+</body>  
+</html>
